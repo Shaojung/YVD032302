@@ -5,6 +5,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -159,6 +160,25 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 Log.d("DLG", "使用者按下取消");
+            }
+        });
+
+        builder.show();
+    }
+
+    public void click6(View v)
+    {
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle("自訂測試");
+
+        LayoutInflater inflater = LayoutInflater.from(MainActivity.this);
+        View mv = inflater.inflate(R.layout.custom_dialog_layout, null);
+        builder.setView(mv);
+
+        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
             }
         });
 

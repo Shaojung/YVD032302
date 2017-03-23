@@ -91,4 +91,13 @@
         android:layout_alignStart="@+id/textView3"
         android:id="@+id/textView4"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+    <Button
+        android:text="自訂Layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button5"
+        android:layout_alignParentStart="true"
+        android:id="@+id/button7"
+        android:onClick="click6" />
 </RelativeLayout>
