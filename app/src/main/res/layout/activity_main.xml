@@ -55,4 +55,22 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:layout_alignBottom="@+id/button3"
         android:layout_alignStart="@+id/textView" />
+
+    <Button
+        android:text="選列表"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button3"
+        android:layout_alignParentStart="true"
+        android:id="@+id/button4"
+        android:onClick="click4" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/button4"
+        android:layout_alignStart="@+id/textView2"
+        android:id="@+id/textView3"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 </RelativeLayout>
