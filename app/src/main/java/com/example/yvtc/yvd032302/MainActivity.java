@@ -47,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setTitle("輸入測試");
         final TextView tv = (TextView) findViewById(R.id.textView);
+        builder.setMessage("請輸入訊息:");
+        builder.setIcon(android.R.drawable.ic_dialog_info);
         final EditText ed = new EditText(MainActivity.this);
         builder.setView(ed);
         builder.setPositiveButton("確定", new DialogInterface.OnClickListener() {
@@ -54,6 +56,35 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 Log.d("DLG", "使用者按下確定");
                 tv.setText(ed.getText().toString());
+            }
+        });
+        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Log.d("DLG", "使用者按下取消");
+            }
+        });
+        builder.show();
+    }
+
+    public void click3(View v)
+    {
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle("選項測試");
+        final String fruits[] = getResources().getStringArray(R.array.fruits);
+        builder.setSingleChoiceItems(R.array.fruits, -1, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                TextView tv2 = (TextView) findViewById(R.id.textView2);
+                tv2.setText(fruits[which]);
+            }
+        });
+        builder.setPositiveButton("確定", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Log.d("DLG", "使用者按下確定");
+
+
             }
         });
         builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {

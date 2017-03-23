@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">YVD032302</string>
+    <string-array name="fruits">
+        <item>蘋果</item>
+        <item>香蕉</item>
+        <item>檸檬</item>
+        <item>芭樂</item>
+    </string-array>
 </resources>
