@@ -100,4 +100,13 @@
         android:layout_alignParentStart="true"
         android:id="@+id/button7"
         android:onClick="click6" />
+
+    <Button
+        android:text="進度"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button7"
+        android:layout_alignParentStart="true"
+        android:id="@+id/button8"
+        android:onClick="click7" />
 </RelativeLayout>
