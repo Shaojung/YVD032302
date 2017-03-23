@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -173,6 +174,15 @@ public class MainActivity extends AppCompatActivity {
 
         LayoutInflater inflater = LayoutInflater.from(MainActivity.this);
         View mv = inflater.inflate(R.layout.custom_dialog_layout, null);
+        Button btn = (Button) mv.findViewById(R.id.button6);
+        final TextView tv5 = (TextView) mv.findViewById(R.id.textView5);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tv5.setText("Hello World");
+            }
+        });
+
         builder.setView(mv);
 
         builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
