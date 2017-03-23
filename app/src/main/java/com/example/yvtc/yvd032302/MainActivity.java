@@ -31,6 +31,12 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("DLG", "使用者按下取消");
             }
         });
+        builder.setNeutralButton("看說明", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Log.d("DLG", "使用者按下看說明");
+            }
+        });
         builder.show();
     }
 }
