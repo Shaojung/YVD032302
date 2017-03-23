@@ -10,7 +10,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-
+    int s = -1;
+    int tmp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,18 +73,20 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setTitle("選項測試");
         final String fruits[] = getResources().getStringArray(R.array.fruits);
-        builder.setSingleChoiceItems(R.array.fruits, -1, new DialogInterface.OnClickListener() {
+        tmp = s;
+        builder.setSingleChoiceItems(R.array.fruits, s, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                TextView tv2 = (TextView) findViewById(R.id.textView2);
-                tv2.setText(fruits[which]);
+                tmp = which;
             }
         });
         builder.setPositiveButton("確定", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 Log.d("DLG", "使用者按下確定");
-
+                TextView tv2 = (TextView) findViewById(R.id.textView2);
+                s = tmp;
+                tv2.setText(fruits[s]);
 
             }
         });
