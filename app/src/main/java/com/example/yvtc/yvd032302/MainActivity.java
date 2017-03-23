@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -45,12 +46,14 @@ public class MainActivity extends AppCompatActivity {
     {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setTitle("輸入測試");
-        EditText ed = new EditText(MainActivity.this);
+        final TextView tv = (TextView) findViewById(R.id.textView);
+        final EditText ed = new EditText(MainActivity.this);
         builder.setView(ed);
         builder.setPositiveButton("確定", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 Log.d("DLG", "使用者按下確定");
+                tv.setText(ed.getText().toString());
             }
         });
         builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
